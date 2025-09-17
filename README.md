@@ -1,4 +1,3 @@
-
 # 🧮 Calculadora (JAVA + HTML + CSS)
 
 Este documento descreve a estrutura e os desafios de desenvolvimento para a construção de uma calculadora web simples. O objetivo é criar uma aplicação onde a interface é feita com **HTML** e **CSS**, e toda a lógica de cálculo é processada no **backend Java**.
@@ -42,11 +41,11 @@ O projeto é dividido em etapas, cada uma com um checklist de requisitos e commi
 **Objetivo:** Configurar o projeto no **IntelliJ** e criar a estrutura de arquivos inicial.
 
 **Requisitos:**
-- [ ] Criar um novo projeto **Maven** no IntelliJ.
-- [ ] Configurar a estrutura de pastas conforme o modelo acima.
-- [ ] Criar os arquivos `Main.java`, `index.html` e `style.css`.
-- [ ] Configurar o `pom.xml` com as dependências necessárias (ex: **Spark** ou **Spring Boot**).
-- [ ] Criar o arquivo `.gitignore`.
+- [x] Criar um novo projeto **Maven** no IntelliJ.
+- [x] Configurar a estrutura de pastas conforme o modelo acima.
+- [x] Criar os arquivos `Main.java`, `index.html` e `style.css`.
+- [x] Configurar o `pom.xml` com as dependências necessárias (ex: **Spark** ou **Spring Boot**).
+- [x] Criar o arquivo `.gitignore`.
 
 **Commits Semânticos (Exemplo):**
 - `feat: setup initial project structure`
@@ -60,10 +59,10 @@ O projeto é dividido em etapas, cada uma com um checklist de requisitos e commi
 **Objetivo:** Criar a interface da calculadora e um script JavaScript para enviar requisições ao backend em Java.
 
 **Requisitos:**
-- [ ] No `index.html`, criar a estrutura visual (display e botões) da calculadora, com um design responsivo via CSS.
-- [ ] Adicionar um arquivo `app.js` no frontend.
-- [ ] Implementar em `app.js` a captura de cliques dos botões.
-- [ ] Implementar em `app.js` a gerência da exibição dos números e operadores.
+- [x] No `index.html`, criar a estrutura visual (display e botões) da calculadora, com um design responsivo via CSS.
+- [x] Adicionar um arquivo `app.js` no frontend.
+- [x] Implementar em `app.js` a captura de cliques dos botões.
+- [x] Implementar em `app.js` a gerência da exibição dos números e operadores.
 - [ ] Configurar a **API Fetch** em `app.js` para enviar a operação completa ao backend quando o botão de igual (`=`) for pressionado.
 
 **Commits Semânticos (Exemplo):**
@@ -78,8 +77,8 @@ O projeto é dividido em etapas, cada uma com um checklist de requisitos e commi
 **Objetivo:** Criar a lógica de cálculo no servidor Java para processar as requisições do frontend.
 
 **Requisitos:**
-- [ ] Em `Main.java`, usar o **Spark Framework** para criar as rotas do servidor.
-- [ ] Criar a rota principal (`/`) para servir o `index.html`.
+- [] Em `Main.java`, usar o **Spark Framework** para criar as rotas do servidor.
+- [] Criar a rota principal (`/`) para servir o `index.html`.
 - [ ] Criar a rota `/calculate` para receber a string da operação.
 - [ ] Implementar a lógica de análise (parsing) da string para identificar números e operadores.
 - [ ] Implementar a **ordem de precedência** matemática no cálculo.
