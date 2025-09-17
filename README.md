@@ -1,66 +1,129 @@
-# 💻 Calculadora Web com Lógica em Java
+Com certeza\! Aqui está o conteúdo do seu `README.md`, reformatado para ter o desafio de desenvolvimento em um formato de checklist.
 
-Este projeto é uma **calculadora web** simples, desenvolvida com o objetivo de demonstrar a comunicação entre um frontend dinâmico e um backend robusto. O grande diferencial é que toda a lógica de cálculo é processada no lado do servidor, utilizando **Java**, enquanto a interface de usuário é construída com **HTML, CSS e JavaScript**.
+```markdown
+# 🧮 Calculadora (JAVA + HTML + CSS)
 
-O intuito deste projeto é ser um exercício prático para iniciantes, focando em como **Java** pode ser o "cérebro" de uma aplicação web, manipulando dados e retornando resultados para o cliente.
-
----
-
-## 🚀 Como Funciona?
-
-A aplicação segue uma arquitetura cliente-servidor:
-
-1.  **Frontend (HTML, CSS e JavaScript):** A interface da calculadora é totalmente construída no navegador. Os botões e o display são criados com HTML e estilizados com CSS para garantir um design responsivo, similar a uma calculadora de celular. O JavaScript, por sua vez, é responsável por capturar os cliques dos botões, exibir os números e operadores no display e, mais importante, enviar a expressão matemática completa para o backend quando o usuário pressiona o botão de igual (`=`).
-
-2.  **Backend (Java com Spark Framework):** O servidor, construído em Java, recebe a expressão matemática enviada pelo frontend. Utilizando uma rota específica, ele **analisa a string**, aplica a **ordem de precedência** matemática (multiplicação e divisão antes de adição e subtração) e executa o cálculo. Após processar a operação, o servidor envia o resultado de volta para o cliente.
-
-3.  **Comunicação:** A ponte entre o frontend e o backend é feita através de requisições HTTP, usando a API **Fetch** do JavaScript para enviar a operação e receber o resultado de volta, que é então exibido na tela da calculadora.
+Este documento descreve a estrutura e os desafios de desenvolvimento para a construção de uma calculadora web simples. O objetivo é criar uma aplicação onde a interface é feita com **HTML** e **CSS**, e toda a lógica de cálculo é processada no **backend Java**.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura de Pastas
 
-A organização do código segue uma estrutura padrão para projetos web:
+Para começar, a organização do projeto segue uma estrutura padrão e clara para facilitar a manutenção e escalabilidade.
 
 ```
 
 calculadora-app/
-├── src/
+├── .idea/                 \# Arquivos de configuração do IntelliJ (ignorar no Git)
+├── .gitignore             \# Arquivo para especificar arquivos e pastas a serem ignorados pelo Git
+├── src/                   \# Diretório de código-fonte
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── com/
 │   │   │       └── calculadora/
-│   │   │           └── Main.java
+│   │   │           └── Main.java  \# Ponto de entrada e servidor Java
 │   │   └── resources/
-│   │       └── static/
+│   │       └── static/            \# Recursos estáticos servidos pelo backend
 │   │           ├── css/
-│   │           │   └── style.css
-│   │           ├── html/
-│   │           │   └── index.html
-│   │           └── js/
-│   │               └── app.js
-├── pom.xml
-└── README.md
+│   │           │   └── style.css  \# Folha de estilo para a calculadora
+│   │           └── html/
+│   │               └── index.html \# A interface HTML da calculadora
+├── pom.xml                \# Arquivo de configuração do Maven para gerenciar dependências
+└── README.md              \# Descrição do projeto
 
-````
+```
 
 ---
 
-## 🎯 Desafios de Desenvolvimento
+## 🚧 Desafio de Desenvolvimento
 
-Durante a construção deste projeto, os seguintes desafios técnicos foram superados:
+O projeto é dividido em etapas, cada uma com um checklist de requisitos e commits semânticos sugeridos.
 
-* **Interface Responsiva:** O design da calculadora se ajusta a diferentes tamanhos de tela, garantindo uma experiência de usuário consistente em dispositivos móveis e desktops.
-* **Lógica de Parsing em Java:** Implementação de um algoritmo no backend capaz de "ler" uma string de operação matemática e extrair os números e operadores.
-* **Ordem de Precedência:** A lógica de cálculo foi projetada para seguir as regras matemáticas, executando as operações na sequência correta.
-* **Comunicação Cliente-Servidor:** Estabelecimento de um fluxo de dados eficiente entre o JavaScript (cliente) e o Java (servidor) através de requisições HTTP.
+### ✅ Etapa 1: Preparação do Ambiente e Estrutura
+
+**Objetivo:** Configurar o projeto no **IntelliJ** e criar a estrutura de arquivos inicial.
+
+**Requisitos:**
+- [ ] Criar um novo projeto **Maven** no IntelliJ.
+- [ ] Configurar a estrutura de pastas conforme o modelo acima.
+- [ ] Criar os arquivos `Main.java`, `index.html` e `style.css`.
+- [ ] Configurar o `pom.xml` com as dependências necessárias (ex: **Spark** ou **Spring Boot**).
+- [ ] Criar o arquivo `.gitignore`.
+
+**Commits Semânticos (Exemplo):**
+- `feat: setup initial project structure`
+- `chore: add gitignore file`
+- `feat: configure maven and dependencies`
 
 ---
 
-## 📜 Boas Práticas Adotadas
+### ✅ Etapa 2: Frontend Estático e Comunicação
 
-O desenvolvimento deste projeto seguiu boas práticas para garantir um código limpo e um histórico de versionamento organizado:
+**Objetivo:** Criar a interface da calculadora e um script JavaScript para enviar requisições ao backend em Java.
 
-* **Versionamento com Git Flow:** A gestão do código-fonte é feita com um fluxo de trabalho simplificado, utilizando branches `main`, `develop` e branches de funcionalidades (`feature/`) para um desenvolvimento mais estruturado.
-* **Commits Semânticos:** Cada `commit` no repositório segue a convenção de commits semânticos (ex: `feat:`, `fix:`, `chore:`) para documentar claramente a natureza de cada alteração.
-* **Código Modular:** A lógica de cálculo foi separada da configuração do servidor, promovendo a reutilização e facilitando a manutenção.
+**Requisitos:**
+- [ ] No `index.html`, criar a estrutura visual (display e botões) da calculadora, com um design responsivo via CSS.
+- [ ] Adicionar um arquivo `app.js` no frontend.
+- [ ] Implementar em `app.js` a captura de cliques dos botões.
+- [ ] Implementar em `app.js` a gerência da exibição dos números e operadores.
+- [ ] Configurar a **API Fetch** em `app.js` para enviar a operação completa ao backend quando o botão de igual (`=`) for pressionado.
+
+**Commits Semânticos (Exemplo):**
+- `feat: create static html and css for calculator ui`
+- `feat: add client-side javascript for event handling`
+- `feat: implement fetch api to send operations to java backend`
+
+---
+
+### ✅ Etapa 3: Lógica da Calculadora em Java
+
+**Objetivo:** Criar a lógica de cálculo no servidor Java para processar as requisições do frontend.
+
+**Requisitos:**
+- [ ] Em `Main.java`, usar o **Spark Framework** para criar as rotas do servidor.
+- [ ] Criar a rota principal (`/`) para servir o `index.html`.
+- [ ] Criar a rota `/calculate` para receber a string da operação.
+- [ ] Implementar a lógica de análise (parsing) da string para identificar números e operadores.
+- [ ] Implementar a **ordem de precedência** matemática no cálculo.
+- [ ] Executar o cálculo na ordem correta.
+- [ ] Retornar o resultado para o cliente como uma resposta HTTP.
+- [ ] Tratar possíveis erros, como divisão por zero.
+
+**Boas Práticas:**
+- Isolar a lógica de cálculo em uma classe separada para organização.
+
+**Commits Semânticos (Exemplo):**
+- `feat: create java backend routes`
+- `feat: implement a parser for mathematical expressions`
+- `feat: add calculation logic with operator precedence`
+- `fix: handle division by zero error`
+
+---
+
+### ✅ Etapa 4: Conclusão e Entrega
+
+**Objetivo:** Integrar frontend e backend, e preparar o projeto para ser entregue.
+
+**Requisitos:**
+- [ ] Garantir que o `app.js` receba e exiba corretamente o resultado do backend.
+- [ ] Testar a aplicação localmente para validar o fluxo de comunicação.
+- [ ] Finalizar o `README.md` com instruções detalhadas de como executar o projeto.
+- [ ] Configurar o **Maven** para gerar um arquivo `jar` executável para o deploy.
+
+**Commits Semânticos (Exemplo):**
+- `feat: integrate frontend and backend communication`
+- `docs: update readme with detailed instructions`
+- `chore: prepare for final jar packaging`
+
+---
+
+## 🌳 Boas Práticas de Versionamento e Git Flow
+
+Para manter o projeto organizado e colaborativo, adotamos um fluxo de trabalho simplificado de **Git Flow**:
+
+- **`main`**: Branch principal. Contém apenas o código estável e pronto para deploy.
+- **`develop`**: Branch de desenvolvimento. Todas as novas funcionalidades são integradas aqui.
+- **`feature/`**: Prefixo para branches de novas funcionalidades (ex: `feature/backend-logic`).
+- **`fix/`**: Prefixo para branches de correção de bugs.
+- **`chore/`**: Prefixo para tarefas de manutenção e configuração.
+```
