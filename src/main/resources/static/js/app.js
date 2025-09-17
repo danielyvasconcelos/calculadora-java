@@ -38,6 +38,37 @@ function limparTela() {
     atualizarTela();
 }
 
+// Enviar operação para o backend
+function enviarParaBackend(operacao) {
+    console.log('Enviando para backend:', operacao);
+    
+    fetch('/calculate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ operacao: operacao })
+    })
+    .then(response => {
+        console.log('Resposta recebida:', response.status);
+        return response.json();
+    })
+    .then(data => {
+        console.log('Resultado do backend:', data);
+        if (data.sucesso) {
+            telaResultado.textContent = data.resultado;
+        } else {
+            telaResultado.textContent = data.erro;
+        }
+        deveResetarTela = true;
+    })
+    .catch(error => {
+        console.error('Erro na comunicação:', error);
+        telaResultado.textContent = 'Erro';
+        deveResetarTela = true;
+    });
+}
+
 // Event listeners para os botões
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Inicializando calculadora');
@@ -60,9 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Botão de igual
     document.querySelector('.btn.equals').addEventListener('click', function() {
         console.log('Clique no botão igual');
-        // Aqui será implementada a comunicação com o backend Java
-        console.log('Enviando para backend:', entradaAtual);
-        deveResetarTela = true;
+        enviarParaBackend(entradaAtual);
     });
     
     // Botão de limpar
