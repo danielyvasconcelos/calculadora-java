@@ -1,6 +1,3 @@
-Entendido\! Aqui está a versão completa do README em código Markdown, pronta para ser copiada e usada.
-
-```markdown
 # 💻 Calculadora Web com Lógica em Java
 
 Este projeto é uma **calculadora web** simples, desenvolvida com o objetivo de demonstrar a comunicação entre um frontend dinâmico e um backend robusto. O grande diferencial é que toda a lógica de cálculo é processada no lado do servidor, utilizando **Java**, enquanto a interface de usuário é construída com **HTML, CSS e JavaScript**.
