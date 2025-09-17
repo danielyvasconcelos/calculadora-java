@@ -8,8 +8,9 @@ public class Main {
     private static final Gson gson = new Gson();
     
     public static void main(String[] args) {
-        // Configurar porta
-        port(8080);
+        // Configurar porta (Render usa PORT environment variable)
+        int porta = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
+        port(porta);
         
         // Servir arquivos estáticos
         staticFiles.location("/static");
@@ -56,7 +57,7 @@ public class Main {
             }
         });
         
-        System.out.println("Servidor rodando em: http://localhost:8080");
-        System.out.println("Acesse a calculadora em: http://localhost:8080");
+        System.out.println("Servidor rodando na porta: " + porta);
+        System.out.println("Calculadora disponível em: /");
     }
 }
