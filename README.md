@@ -1,6 +1,4 @@
-Com certeza\! Aqui está o conteúdo do seu `README.md`, reformatado para ter o desafio de desenvolvimento em um formato de checklist.
 
-```markdown
 # 🧮 Calculadora (JAVA + HTML + CSS)
 
 Este documento descreve a estrutura e os desafios de desenvolvimento para a construção de uma calculadora web simples. O objetivo é criar uma aplicação onde a interface é feita com **HTML** e **CSS**, e toda a lógica de cálculo é processada no **backend Java**.
